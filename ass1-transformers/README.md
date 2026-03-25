@@ -257,9 +257,21 @@ Feed the trained LM with input samples, and store the resulting attention matric
 Describe the attention behavior you found, as well as the way to find it, in a brief report.
 ## What to submit
 
+Submit all the following in a single `zip` or `tgz` file.
+
+#### Your ID
+
+A file called `ID.txt`.
+
+The file should be in plain ascii.
+
+Each line should be the ID number of one of the authors, followed by space and the author name (in English).
+
 #### Code
 
 Submit all the code files that you edited, as well as any additional file you created. Please do not change the signatures of functions or classes provided in the assignment (though you can add default parameters with sane defaults).
+
+Code should be in a subfolder called `code` or `src`.
 
 #### Report
 
@@ -275,6 +287,7 @@ Also submit a **short report in pdf format** listing:
 A majority of your grade will be based on the report and what it describes, including your obtained loss, so it is worth investing in it.
 
 The report file should be called `report.pdf`
+
 #### Model Samples
 
 Submit two files `hebrew-sample.txt` and `english-sample.txt` .
