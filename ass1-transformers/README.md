@@ -8,6 +8,10 @@ In order to get fast development turn-around, we will be working with small-ish 
 
 Free GPU time that are sufficient for this assignment are available in the Google Colab platform.
 
+## Skeleton code and data
+
+[code-and-data.tgz](code-and-data.tgz)
+
 ## PyTorch etc
 
 We will be working with PyTorch multi-dimensional tensors, and a large part of the work is in creating, combining, splitting and re-arranging their dimensions. Here are some functions that you may find useful:
