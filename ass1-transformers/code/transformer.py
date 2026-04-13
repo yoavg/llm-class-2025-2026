@@ -76,17 +76,17 @@ class TransformerLM(nn.Module):
     def init_weights(self):
         # initialize weights
         # TODO implement initialization logic for embeddings and linear layers.
-        # The code break down the parameters by type (layer-norm, linear, embedding),
+        # The code break down the modules by type (layer-norm, linear, embedding),
         # but can also condition on individual names, for example by checking pn.endswith(...).
-        for pn, p in self.named_parameters():
-            if isinstance(p, nn.LayerNorm):
-                torch.nn.init.zeros_(p.bias)
-                torch.nn.init.ones_(p.weight)
-            elif isinstance(p, nn.Linear):
+        for module in self.modules():
+            if isinstance(module, nn.LayerNorm):
+                torch.nn.init.zeros_(module.bias)
+                torch.nn.init.ones_(module.weight)
+            elif isinstance(module, nn.Linear):
                 # TODO initialize p.weight and p.bias (if it is not None).
                 # You can look at initializers in torch.nn.init
                 pass
-            elif isinstance(p, nn.Embedding):
+            elif isinstance(module, nn.Embedding):
                 # TODO initialize p.weight and p.bias (if it is not None).
                 # You can look at initializers in torch.nn.init
                 pass
