@@ -10,6 +10,9 @@ if __name__ == "__main__":
 
     import data
 
+    device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu") 
+    print(f"Using device: {device}")
+
     seq_len = 128
     batch_size = 64
     data_path = "../data/en/"
@@ -38,6 +41,7 @@ if __name__ == "__main__":
         with_residuals=True,
     )
 
+    model = model.to(device)
     optimizer = optim.AdamW(model.parameters(), lr=learning_rate, betas=[0.9, 0.95])
 
     model.train()
@@ -49,7 +53,7 @@ if __name__ == "__main__":
                 break
 
             batch_x, batch_y = lm.batch_to_labeled_samples(batch)
-
+            batch_x, batch_y = batch_x.to(device), batch_y.to(device)
             logits = model(batch_x)
 
             loss = lm.compute_loss(logits, batch_y)
